@@ -42,9 +42,8 @@ This script requires root privileges to manage disks.
 ### Make Executable
 Before running, give the script execute permissions:
 
-```bash
 chmod +x your_script_name.sh
-sudo ./your_script_name.sh````
+sudo ./your_script_name.sh
 
 ## 3. Follow the On-Screen Menu
 
