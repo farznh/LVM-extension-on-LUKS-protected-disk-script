@@ -44,7 +44,8 @@ Before running, give the script execute permissions:
 
 ```bash
 chmod +x your_script_name.sh
-sudo ./your_script_name.sh
+sudo ./your_script_name.sh````
+
 ## 3. Follow the On-Screen Menu
 
 The script will present a menu. Choose the option that matches your situation:
