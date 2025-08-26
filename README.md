@@ -1,34 +1,41 @@
-# LVM-extension-on-LUKS-protected-disk-script
-This is an interactive Bash script to automate and simplify the process of extending LVM logical volumes (/ and /home) on LUKS-encrypted disks in a Linux environment. It provides a user-friendly, menu-driven interface to handle common storage management scenarios, reducing the risk of manual error during critical disk operations.
+# Interactive Bash Script for Extending LVM on LUKS-Encrypted Disks
 
-Key Features:
-Menu-Driven & Interactive: A simple terminal interface guides you through every step.
+This is an interactive Bash script to automate and simplify the process of extending LVM logical volumes (`/` and `/home`) on LUKS-encrypted disks in a Linux environment. It provides a user-friendly, menu-driven interface to handle common storage management scenarios, reducing the risk of manual error during critical disk operations.
 
-Handles Two Core Scenarios:
-Adding a New Physical Disk: Automatically partitions, encrypts, and integrates a new disk into the existing LVM Volume Group.
-Resizing an Existing Disk: Safely expands the partition, LUKS container, and LVM layers to utilize space added to an existing virtual or physical disk.
+## Key Features
 
-Flexible Space Allocation: For both scenarios, the script allows you to:
+### Menu-Driven & Interactive
+A simple terminal interface guides you through every step.
 
-Allocate all new space to the root (/) filesystem.
+### Handles Two Core Scenarios
 
-Allocate all new space to the home (/home) filesystem.
+- **Adding a New Physical Disk**:  
+  Automatically partitions, encrypts, and integrates a new disk into the existing LVM Volume Group.
 
-Interactively distribute the new space between both / and /home by user's choice.
+- **Resizing an Existing Disk**:  
+  Safely expands the partition, LUKS container, and LVM layers to utilize space added to an existing virtual or physical disk.
 
-Fully Automated: Manages all underlying commands for:
+### Flexible Space Allocation
+For both scenarios, the script allows you to:
 
-Partitioning (parted)
+- Allocate all new space to the root (`/`) filesystem.
+- Allocate all new space to the home (`/home`) filesystem.
+- Interactively distribute the new space between both `/` and `/home` by user's choice.
 
-LUKS encryption (cryptsetup)
+### Fully Automated
+Manages all underlying commands for:
 
-LVM management (pvcreate, vgextend, pvresize, lvextend)
+- **Partitioning** (`parted`)
+- **LUKS encryption** (`cryptsetup`)
+- **LVM management** (`pvcreate`, `vgextend`, `pvresize`, `lvextend`)
+- **Filesystem resizing** (`xfs_growfs`, `resize2fs`)
 
-Filesystem resizing (xfs_growfs, resize2fs)
+### System-Aware
+Automatically updates `/etc/crypttab`, GRUB, and `initramfs` to ensure a new encrypted volume is recognized on boot.
 
-System-Aware: Automatically updates /etc/crypttab, GRUB, and initramfs to ensure a new encrypted volume is recognized on boot.
+### Safe to Use
+Includes clear confirmation prompts before any destructive actions are taken and logs all output to a timestamped file for auditing and debugging.
 
-Safe to Use: Includes clear confirmation prompts before any destructive actions are taken and logs all output to a timestamped file for auditing and debugging.
 
 # How to Use This Script
 
