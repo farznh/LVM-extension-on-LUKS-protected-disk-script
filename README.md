@@ -10,7 +10,7 @@ A simple terminal interface guides you through every step.
 ### Handles Two Core Scenarios
 
 - **Adding a New Physical Disk**:  
-  Automatically partitions, encrypts, and integrates a new disk into the existing LVM Volume Group.
+  Automatically partitions, encrypts, and integrates a new disk into the existing.
 
 - **Resizing an Existing Disk**:  
   Safely expands the partition, LUKS container, and LVM layers to utilize space added to an existing virtual or physical disk.
@@ -21,6 +21,7 @@ For both scenarios, the script allows you to:
 - Allocate all new space to the root (`/`) filesystem.
 - Allocate all new space to the home (`/home`) filesystem.
 - Interactively distribute the new space between both `/` and `/home` by user's choice.
+- Automatically detects the volume groups of each partition, and if the user's choice is not applicable, it warns the user and allows them to select from appropriate options.
 
 ### Fully Automated
 Manages all underlying commands for:
